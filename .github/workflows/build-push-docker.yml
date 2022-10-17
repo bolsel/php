@@ -49,8 +49,8 @@ jobs:
           context: ./docker
           file: Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta_base.outputs.tags }}
-          labels: ${{ steps.meta_base.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
             ghcr.io/${{ github.repository }}
