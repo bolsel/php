@@ -61,6 +61,7 @@ COPY --link conf.d/app.prod.ini $PHP_INI_DIR/conf.d/
 
 COPY --link php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 RUN mkdir -p /var/run/php
+RUN mkdir -p var/cache var/log
 
 COPY --link docker-healthcheck.sh /usr/local/bin/docker-healthcheck
 RUN chmod +x /usr/local/bin/docker-healthcheck
